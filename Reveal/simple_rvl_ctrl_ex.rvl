@@ -1,0 +1,94 @@
+<Project Name="E:/GitHub/jtag_work/simple_rvl_ctrl_example/simple_rvl_ctrl_ex/Reveal/simple_rvl_ctrl_ex.rvl" SigType="0" Date="2021-07-22" ModBy="Inserter">
+    <IP Version="1_6_042617"/>
+    <Design JTAG="hard" DesignName="simple_rvl_ctrl_ex" DesignEntry="Schematic/Verilog HDL" DeviceFamily="LFD2NX" Synthesis="synplify"/>
+    <Core Name="top_rvl_ctrl_ex_LA0" Reveal_sig="367858319" InsertDataset="0" ID="0" Insert="1">
+        <Setting>
+            <Clock SampleEnable="0" EnableClk="" EnableClk_Pri="0" SampleClk="sys_clk"/>
+            <TraceBuffer IncTrigSig="1" BitTimeStamp="0" BufferDepth="1024" hasTimeStamp="0" Implementation="0"/>
+            <Capture Mode="1" MinSamplesPerTrig="8"/>
+            <Event MaxEventCnt="8" CntEnable="0"/>
+            <TrigOut MinPulseWidth="0" Polarity="0" EnableTrigOut="0" TrigOutNet="reveal_debug_top_rvl_ctrl_ex_LA0_net" TrigOutNetType="1"/>
+            <DistRAM Disable="0"/>
+        </Setting>
+        <Dataset Name="Base">
+            <Trace>
+                <Bus Name="usr_wdata">
+                    <Sig Name="usr_wdata:0" Type="SIG"/>
+                    <Sig Name="usr_wdata:1" Type="SIG"/>
+                    <Sig Name="usr_wdata:2" Type="SIG"/>
+                    <Sig Name="usr_wdata:3" Type="SIG"/>
+                    <Sig Name="usr_wdata:4" Type="SIG"/>
+                    <Sig Name="usr_wdata:5" Type="SIG"/>
+                    <Sig Name="usr_wdata:6" Type="SIG"/>
+                    <Sig Name="usr_wdata:7" Type="SIG"/>
+                    <Sig Name="usr_wdata:8" Type="SIG"/>
+                    <Sig Name="usr_wdata:9" Type="SIG"/>
+                    <Sig Name="usr_wdata:10" Type="SIG"/>
+                    <Sig Name="usr_wdata:11" Type="SIG"/>
+                    <Sig Name="usr_wdata:12" Type="SIG"/>
+                    <Sig Name="usr_wdata:13" Type="SIG"/>
+                    <Sig Name="usr_wdata:14" Type="SIG"/>
+                    <Sig Name="usr_wdata:15" Type="SIG"/>
+                </Bus>
+                <Bus Name="usr_rdata">
+                    <Sig Name="usr_rdata:0" Type="SIG"/>
+                    <Sig Name="usr_rdata:1" Type="SIG"/>
+                    <Sig Name="usr_rdata:2" Type="SIG"/>
+                    <Sig Name="usr_rdata:3" Type="SIG"/>
+                    <Sig Name="usr_rdata:4" Type="SIG"/>
+                    <Sig Name="usr_rdata:5" Type="SIG"/>
+                    <Sig Name="usr_rdata:6" Type="SIG"/>
+                    <Sig Name="usr_rdata:7" Type="SIG"/>
+                    <Sig Name="usr_rdata:8" Type="SIG"/>
+                    <Sig Name="usr_rdata:9" Type="SIG"/>
+                    <Sig Name="usr_rdata:10" Type="SIG"/>
+                    <Sig Name="usr_rdata:11" Type="SIG"/>
+                    <Sig Name="usr_rdata:12" Type="SIG"/>
+                    <Sig Name="usr_rdata:13" Type="SIG"/>
+                    <Sig Name="usr_rdata:14" Type="SIG"/>
+                    <Sig Name="usr_rdata:15" Type="SIG"/>
+                </Bus>
+                <Bus Name="usr_addr">
+                    <Sig Name="usr_addr:0" Type="SIG"/>
+                    <Sig Name="usr_addr:1" Type="SIG"/>
+                    <Sig Name="usr_addr:2" Type="SIG"/>
+                    <Sig Name="usr_addr:3" Type="SIG"/>
+                    <Sig Name="usr_addr:4" Type="SIG"/>
+                    <Sig Name="usr_addr:5" Type="SIG"/>
+                    <Sig Name="usr_addr:6" Type="SIG"/>
+                    <Sig Name="usr_addr:7" Type="SIG"/>
+                    <Sig Name="usr_addr:8" Type="SIG"/>
+                    <Sig Name="usr_addr:9" Type="SIG"/>
+                    <Sig Name="usr_addr:10" Type="SIG"/>
+                    <Sig Name="usr_addr:11" Type="SIG"/>
+                    <Sig Name="usr_addr:12" Type="SIG"/>
+                    <Sig Name="usr_addr:13" Type="SIG"/>
+                    <Sig Name="usr_addr:14" Type="SIG"/>
+                    <Sig Name="usr_addr:15" Type="SIG"/>
+                </Bus>
+                <Sig Name="usr_we" Type="SIG"/>
+            </Trace>
+            <Trigger>
+                <TU Sig="(BUS)counter[29:0]," Serialbits="0" Type="0" ID="1"/>
+                <TU Sig="(BUS)dip_sw[3:0]," Serialbits="0" Type="0" ID="2"/>
+                <TU Sig="(BUS)pb[2:0]," Serialbits="0" Type="0" ID="3"/>
+                <TU Sig="reg_intf_read," Serialbits="0" Type="0" ID="4"/>
+                <TU Sig="reg_intf_write," Serialbits="0" Type="0" ID="5"/>
+                <TE MaxEvnCnt="64" MaxSequence="4" ID="1" Resource="1"/>
+            </Trigger>
+        </Dataset>
+    </Core>
+    <ControllerCore Name="top_Controller" Insert="1">
+        <Switch Begin="0x80000000" Insert="0" Width="1"/>
+        <LED Begin="0x80000001" Insert="0" Width="1"/>
+        <Register DataWidth="16" End="0x9000FFFF" Begin="0x90000000" Insert="1" AddrWidth="16">
+            <Clock Name="i_rvl_ctrl_mod/pmi_mem_32_inst/ClockA"/>
+            <Clock_enable Name="i_rvl_ctrl_mod/pmi_mem_32_inst/ClockEnA"/>
+            <Wr_Rdn Name="i_rvl_ctrl_mod/pmi_mem_32_inst/WrA"/>
+            <Address Name="i_rvl_ctrl_mod/pmi_mem_32_inst/AddressA[15:0]"/>
+            <WData Name="i_rvl_ctrl_mod/pmi_mem_32_inst/DataInA[15:0]"/>
+            <RData Name="i_rvl_ctrl_mod/pmi_mem_32_inst/QA[15:0]"/>
+        </Register>
+        <HardIP Size="0"/>
+    </ControllerCore>
+</Project>

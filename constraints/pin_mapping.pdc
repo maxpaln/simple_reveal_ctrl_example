@@ -1,0 +1,32 @@
+# 7 Segment Display
+ldc_set_location -site {G16} [get_ports {seven_seg[0]}]
+ldc_set_location -site {G14} [get_ports {seven_seg[1]}]
+ldc_set_location -site {G12} [get_ports {seven_seg[2]}]
+ldc_set_location -site {G11} [get_ports {seven_seg[3]}]
+ldc_set_location -site {E12} [get_ports {seven_seg[4]}]
+ldc_set_location -site {E10} [get_ports {seven_seg[5]}]
+ldc_set_location -site {E9}  [get_ports {seven_seg[6]}]
+ldc_set_location -site {F9}  [get_ports {seven_seg[7]}]
+# LEDs
+ldc_set_location -site {B3}  [get_ports {leds[0]}]
+ldc_set_location -site {A2}  [get_ports {leds[1]}]
+ldc_set_location -site {H16} [get_ports {leds[2]}]
+ldc_set_location -site {B2}  [get_ports {leds[3]}]
+ldc_set_location -site {H15} [get_ports {leds[4]}]
+ldc_set_location -site {H14} [get_ports {leds[5]}]
+ldc_set_location -site {H12} [get_ports {leds[6]}]
+ldc_set_location -site {J15} [get_ports {leds[7]}]
+# DIP Switches
+ldc_set_location -site {L10} [get_ports {dip_sw[0]}]
+ldc_set_location -site {E16} [get_ports {dip_sw[1]}]
+ldc_set_location -site {L11} [get_ports {dip_sw[2]}]
+ldc_set_location -site {R3}  [get_ports {dip_sw[3]}]
+# Push Buttons
+ldc_set_location -site {G4}  [get_ports {pb[0]}]
+ldc_set_location -site {G2}  [get_ports {pb[1]}]
+ldc_set_location -site {J16} [get_ports {pb[2]}]
+# Clocks
+ldc_set_location -site {F16} [get_ports system_25m_clk]
+ldc_set_location -site {H11} [get_ports clk_customer1]
+ldc_set_location -site {H13} [get_ports clk_customer2]
+ldc_set_sysconfig {JTAG_PORT=ENABLE}
