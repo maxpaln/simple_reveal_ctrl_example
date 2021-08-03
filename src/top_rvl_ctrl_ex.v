@@ -1,6 +1,8 @@
 module top_rvl_ctrl_ex # (
   RVL_REG_ADDR_WIDTH                   = 16,
-  RVL_REG_DATA_WIDTH                   = 16 
+  RVL_REG_DATA_WIDTH                   = 16,
+  RVL_LED_WIDTH                        = 32,
+  RVL_SWITCH_WIDTH                     = 4
 ) (
   input  wire [3:0]                    dip_sw,
   input  wire [2:0]                    pb,
@@ -32,9 +34,10 @@ module top_rvl_ctrl_ex # (
   // Assignments
   assign sys_clk                       = clk_customer1;
   assign rstn                          = pb[2];
-  assign leds                          = {reg_intf_read,reg_intf_write,counter[26:21]};
+  assign leds                          = {reg_intf_read,reg_intf_write,counter[26:23]};
   assign reg_intf_write                = (&counter[COUNT_WR_SIZE-1:0] == 1) ? 1'b1 : 1'b0;
-  assign reg_intf_read                 = (&counter[COUNT_RD_SIZE-1:0] == 1) ? 1'b1 : 1'b0;
+  //assign reg_intf_read                 = (&counter[COUNT_RD_SIZE-1:0] == 1) ? 1'b1 : 1'b0;
+  assign reg_intf_read                 = rvl_ctrl_sw[0];
 
   // Clocked Logic
   always @(posedge sys_clk or negedge rstn)
@@ -42,6 +45,13 @@ module top_rvl_ctrl_ex # (
       counter                          <= 'hA5A5A;
     end else begin
       counter                          <= counter + 1'b1;
+    end
+
+  // Create pulse on rising edge of Reveal Switches
+  always @(posedge sys_clk or negedge rstn)
+    if (~rstn) begin
+      
+    end else begin
     end
 
   // Simple Logic to write to Register Interface from user port
@@ -75,8 +85,8 @@ module top_rvl_ctrl_ex # (
       end
     end
 
-  // Reveal Controller Module
-  rvl_ctrl_mod # (
+  // Reveal Controller Register Interface Module
+  rvl_ctrl_reg_intf_mod # (
     .ADDR_WIDTH                        (RVL_REG_ADDR_WIDTH),
     .DATA_WIDTH                        (RVL_REG_DATA_WIDTH)
   ) i_rvl_ctrl_mod (
@@ -87,6 +97,15 @@ module top_rvl_ctrl_ex # (
     .usr_addr                          (usr_addr),
     .usr_wdata                         (usr_wdata),
     .usr_rdata                         (usr_rdata)
+  );
+
+  // Reveal Controller LED & Switch Module
+  rvl_ctrl_led_switch_mod # (
+    .LED_WIDTH                         (RVL_LED_WIDTH),
+    .SWITCH_WIDTH                      (RVL_SWITCH_WIDTH)
+  ) i_rvl_ctrl_led_switch_mod (
+    .rvl_leds                          (counter[RVL_LED_WIDTH-1:0]),
+    .rvl_switches                      (rvl_ctrl_sw)
   );
 
 endmodule
