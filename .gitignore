@@ -1,0 +1,41 @@
+# Exclude files/folders in same directory as the .gitignore file
+/*
+
+# Permit some files
+!.gitignore
+!.vimsession
+!version.txt
+!mk_release.bash
+!README.md
+
+# Exclude ALL GVIM Temp Files
+**.swl
+**.swm
+**.swo
+**.swp
+**.*~
+
+# Include Radiant Project Files
+!simple_rvl_ctrl_ex.rdf
+!simple_rvl_ctrl_ex.sty
+!/constraints/
+/constraints/*
+!/constraints/pin_mapping.pdc
+!/constraints/timing_constraints.sdc
+
+# Include Programmer and Reveal Files
+!/Programmer/
+/Programmer/*
+!/Programmer/certus_nx_versa.xcf
+!/Reveal/
+/Reveal/*
+!/Reveal/simple_rvl_ctrl_a.rva
+!/Reveal/simple_rvl_ctrl_a.svf
+!/Reveal/simple_rvl_ctrl_a.trc
+!/Reveal/simple_rvl_ctrl_ex.rvl
+!/Reveal/simple_rvl_ctrl_ex.rvs
+
+# Add source files
+!/src/
+/src/*
+!/src/*.v
