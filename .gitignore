@@ -39,3 +39,15 @@
 !/src/
 /src/*
 !/src/*.v
+
+# Add Sim Files
+!/sim/
+/sim/*
+!/sim/modelsim/
+/sim/modelsim/*
+!/sim/modelsim/design_files.f
+!/sim/modelsim/modelsim_fsim.do
+!/sim/modelsim/wave_debug.do
+!/sim/testbench/
+/sim/testbench/*
+!/sim/testbench/tb_simple_rvl_ex.v

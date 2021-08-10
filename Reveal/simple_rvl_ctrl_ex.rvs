@@ -1,13 +1,13 @@
-<Project Name="E:/GitHub/jtag_work/simple_rvl_ctrl_example/simple_rvl_ctrl_ex/Reveal/simple_rvl_ctrl_ex.rvs" Date="2021-07-22" ModBy="Analyzer">
+<Project ModBy="Analyzer" Name="E:/GitHub/jtag_work/simple_rvl_ctrl_example/simple_rvl_ctrl_ex/Reveal/simple_rvl_ctrl_ex.rvs" Date="2021-08-10">
  <Core Name="top_rvl_ctrl_ex_LA0">
   <Setting>
    <Capture SamplesPerTrig="64" NumTrigsCap="6"/>
    <Event CntEnableRun="0" EventCnt="0"/>
-   <TrigSetting PreTrgSamples="" PostTrgSamples="" AND_ALL="0" TURadix="0"/>
+   <TrigSetting AND_ALL="0" PreTrgSamples="" PostTrgSamples="" TURadix="0"/>
   </Setting>
   <Dataset Name="Base">
    <Trace>
-    <Bus Name="usr_wdata" Radix="0">
+    <Bus Radix="0" Name="usr_wdata">
      <Sig Name="usr_wdata:0"/>
      <Sig Name="usr_wdata:1"/>
      <Sig Name="usr_wdata:2"/>
@@ -25,7 +25,7 @@
      <Sig Name="usr_wdata:14"/>
      <Sig Name="usr_wdata:15"/>
     </Bus>
-    <Bus Name="usr_rdata" Radix="0">
+    <Bus Radix="0" Name="usr_rdata">
      <Sig Name="usr_rdata:0"/>
      <Sig Name="usr_rdata:1"/>
      <Sig Name="usr_rdata:2"/>
@@ -43,7 +43,7 @@
      <Sig Name="usr_rdata:14"/>
      <Sig Name="usr_rdata:15"/>
     </Bus>
-    <Bus Name="usr_addr" Radix="0">
+    <Bus Radix="0" Name="usr_addr">
      <Sig Name="usr_addr:0"/>
      <Sig Name="usr_addr:1"/>
      <Sig Name="usr_addr:2"/>
@@ -64,12 +64,12 @@
     <Sig Name="usr_we"/>
    </Trace>
    <Trigger>
-    <TU Name="COUNTER" Index="0" Value="04000000" Operator="0" Radix="3" ID="1"/>
-    <TU Name="SW" Index="2" Value="0" Operator="1" Radix="3" ID="2"/>
-    <TU Name="PB" Index="4" Value="0" Operator="1" Radix="3" ID="3"/>
-    <TU Name="REG_RD" Index="1" Value="1" Operator="0" Radix="0" ID="4"/>
-    <TU Name="REG_WR" Index="3" Value="1" Operator="0" Radix="0" ID="5"/>
-    <TE Name="TE1" Index="1" Enable="1" ID="1" Expression="REG_WR"/>
+    <TU Radix="3" Operator="0" Index="0" Name="COUNTER" ID="1" Value="04000000"/>
+    <TU Radix="3" Operator="1" Index="2" Name="SW" ID="2" Value="0"/>
+    <TU Radix="3" Operator="1" Index="4" Name="PB" ID="3" Value="0"/>
+    <TU Radix="0" Operator="0" Index="1" Name="REG_RD" ID="4" Value="1"/>
+    <TU Radix="0" Operator="0" Index="3" Name="REG_WR" ID="5" Value="1"/>
+    <TE Enable="1" Index="1" Name="TE1" ID="1" Expression="REG_WR"/>
    </Trigger>
   </Dataset>
  </Core>

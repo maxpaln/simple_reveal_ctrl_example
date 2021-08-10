@@ -1,13 +1,13 @@
-<Project Name="E:/GitHub/jtag_work/simple_rvl_ctrl_example/simple_rvl_ctrl_ex/Reveal/simple_rvl_ctrl_ex.rvl" SigType="0" Date="2021-07-22" ModBy="Inserter">
+<Project SigType="0" ModBy="Inserter" Name="E:/GitHub/jtag_work/simple_rvl_ctrl_example/simple_rvl_ctrl_ex/Reveal/simple_rvl_ctrl_ex.rvl" Date="2021-08-10">
     <IP Version="1_6_042617"/>
-    <Design JTAG="hard" DesignName="simple_rvl_ctrl_ex" DesignEntry="Schematic/Verilog HDL" DeviceFamily="LFD2NX" Synthesis="synplify"/>
-    <Core Name="top_rvl_ctrl_ex_LA0" Reveal_sig="367858319" InsertDataset="0" ID="0" Insert="1">
+    <Design DeviceFamily="LFD2NX" JTAG="hard" Synthesis="synplify" DesignEntry="Schematic/Verilog HDL" DesignName="simple_rvl_ctrl_ex"/>
+    <Core InsertDataset="0" Insert="1" Reveal_sig="370472560" Name="top_rvl_ctrl_ex_LA0" ID="0">
         <Setting>
-            <Clock SampleEnable="0" EnableClk="" EnableClk_Pri="0" SampleClk="sys_clk"/>
-            <TraceBuffer IncTrigSig="1" BitTimeStamp="0" BufferDepth="1024" hasTimeStamp="0" Implementation="0"/>
+            <Clock EnableClk_Pri="0" SampleEnable="0" EnableClk="" SampleClk="sys_clk"/>
+            <TraceBuffer BitTimeStamp="0" Implementation="0" BufferDepth="1024" IncTrigSig="1" hasTimeStamp="0"/>
             <Capture Mode="1" MinSamplesPerTrig="8"/>
-            <Event MaxEventCnt="8" CntEnable="0"/>
-            <TrigOut MinPulseWidth="0" Polarity="0" EnableTrigOut="0" TrigOutNet="reveal_debug_top_rvl_ctrl_ex_LA0_net" TrigOutNetType="1"/>
+            <Event CntEnable="0" MaxEventCnt="8"/>
+            <TrigOut EnableTrigOut="0" TrigOutNetType="1" Polarity="0" TrigOutNet="reveal_debug_top_rvl_ctrl_ex_LA0_net" MinPulseWidth="0"/>
             <DistRAM Disable="0"/>
         </Setting>
         <Dataset Name="Base">
@@ -69,25 +69,33 @@
                 <Sig Name="usr_we" Type="SIG"/>
             </Trace>
             <Trigger>
-                <TU Sig="(BUS)counter[29:0]," Serialbits="0" Type="0" ID="1"/>
-                <TU Sig="(BUS)dip_sw[3:0]," Serialbits="0" Type="0" ID="2"/>
-                <TU Sig="(BUS)pb[2:0]," Serialbits="0" Type="0" ID="3"/>
-                <TU Sig="reg_intf_read," Serialbits="0" Type="0" ID="4"/>
-                <TU Sig="reg_intf_write," Serialbits="0" Type="0" ID="5"/>
-                <TE MaxEvnCnt="64" MaxSequence="4" ID="1" Resource="1"/>
+                <TU Sig="(BUS)counter[31:0]," Type="0" ID="1" Serialbits="0"/>
+                <TU Sig="(BUS)dip_sw[3:0]," Type="0" ID="2" Serialbits="0"/>
+                <TU Sig="(BUS)pb_sw[2:0]," Type="0" ID="3" Serialbits="0"/>
+                <TU Sig="reg_intf_read," Type="0" ID="4" Serialbits="0"/>
+                <TU Sig="reg_intf_write," Type="0" ID="5" Serialbits="0"/>
+                <TE MaxSequence="4" ID="1" Resource="1" MaxEvnCnt="64"/>
             </Trigger>
         </Dataset>
     </Core>
-    <ControllerCore Name="top_Controller" Insert="1">
-        <Switch Begin="0x80000000" Insert="0" Width="1"/>
-        <LED Begin="0x80000001" Insert="0" Width="1"/>
-        <Register DataWidth="16" End="0x9000FFFF" Begin="0x90000000" Insert="1" AddrWidth="16">
-            <Clock Name="i_rvl_ctrl_mod/pmi_mem_32_inst/ClockA"/>
-            <Clock_enable Name="i_rvl_ctrl_mod/pmi_mem_32_inst/ClockEnA"/>
-            <Wr_Rdn Name="i_rvl_ctrl_mod/pmi_mem_32_inst/WrA"/>
-            <Address Name="i_rvl_ctrl_mod/pmi_mem_32_inst/AddressA[15:0]"/>
-            <WData Name="i_rvl_ctrl_mod/pmi_mem_32_inst/DataInA[15:0]"/>
-            <RData Name="i_rvl_ctrl_mod/pmi_mem_32_inst/QA[15:0]"/>
+    <ControllerCore Insert="1" Name="top_Controller">
+        <Switch Begin="0x80000000" Width="2" Insert="1">
+            <SW0 Signal="i_rvl_ctrl_switch_mod/reveal_ctrl_sw:1" Name="SW1"/>
+            <SW1 Signal="i_rvl_ctrl_switch_mod/reveal_ctrl_sw:0" Name="SW0"/>
+        </Switch>
+        <LED Begin="0x80000001" Width="4" Insert="1">
+            <LED0 Signal="i_rvl_ctrl_led_mod/reveal_ctrl_leds:3" Name="LED3"/>
+            <LED1 Signal="i_rvl_ctrl_led_mod/reveal_ctrl_leds:2" Name="LED2"/>
+            <LED2 Signal="i_rvl_ctrl_led_mod/reveal_ctrl_leds:1" Name="LED1"/>
+            <LED3 Signal="i_rvl_ctrl_led_mod/reveal_ctrl_leds:0" Name="LED0"/>
+        </LED>
+        <Register Begin="0x90000000" End="0x9000FFFF" Insert="1" DataWidth="16" AddrWidth="16">
+            <Clock Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_32_inst/ClockA"/>
+            <Clock_enable Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_32_inst/ClockEnA"/>
+            <Wr_Rdn Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_32_inst/WrA"/>
+            <Address Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_32_inst/AddressA[15:0]"/>
+            <WData Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_32_inst/DataInA[15:0]"/>
+            <RData Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_32_inst/QA[15:0]"/>
         </Register>
         <HardIP Size="0"/>
     </ControllerCore>

@@ -6,7 +6,16 @@
         <Source name="src/top_rvl_ctrl_ex.v" type="Verilog" type_short="Verilog">
             <Options top_module="top_rvl_ctrl_ex"/>
         </Source>
-        <Source name="src/rvl_ctrl_mod.v" type="Verilog" type_short="Verilog">
+        <Source name="src/rvl_ctrl_reg_intf_mod.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/pulse_extender.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/rvl_ctrl_switch_mod.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/rvl_ctrl_led_mod.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
         <Source name="constraints/pin_mapping.pdc" type="Physical Constraints File" type_short="PDC">
@@ -15,13 +24,13 @@
         <Source name="constraints/timing_constraints.sdc" type="Pre-Synthesis Constraints File" type_short="SDC">
             <Options/>
         </Source>
+        <Source name="Programmer/certus_nx_versa.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
         <Source name="Reveal/simple_rvl_ctrl_a.rva" type="Reveal Analyzer Project File" type_short="RVA">
             <Options/>
         </Source>
         <Source name="Reveal/simple_rvl_ctrl_ex.rvl" type="Reveal" type_short="Reveal">
-            <Options/>
-        </Source>
-        <Source name="source/impl_1.xcf" type="Programming Project File" type_short="Programming">
             <Options/>
         </Source>
     </Implementation>
