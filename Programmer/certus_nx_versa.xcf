@@ -20,7 +20,7 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>../../impl_1/simple_rvl_ctrl_ex_impl_1.bit</File>
-			<FileTime>07/22/21 14:50:06</FileTime>
+			<FileTime>08/11/21 12:28:20</FileTime>
 			<MemoryType>Static Random Access Memory (SRAM)</MemoryType>
 			<Operation>Fast Configuration</Operation>
 			<Option>
@@ -28,6 +28,7 @@
 				<IOState>HighZ</IOState>
 				<PreloadLength>362</PreloadLength>
 				<IOVectorData>0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</IOVectorData>
+				<SVFProcessor>SVF Processor</SVFProcessor>
 				<Usercode>0x00000000</Usercode>
 				<AccessMode>Direct Programming</AccessMode>
 			</Option>

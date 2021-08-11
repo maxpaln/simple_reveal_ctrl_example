@@ -100,7 +100,7 @@ module top_rvl_ctrl_ex # (
 
   // Assignments to get the design to do something interesting...
   assign sys_clk                       = clk_customer1;
-  assign leds                          = {counter[COUNT_RD_SIZE-1:COUNT_RD_SIZE-4],virtual_sw[1:0],virtual_leds[3],pb_sw[1]};
+  assign leds                          = {counter[COUNT_RD_SIZE-1:COUNT_RD_SIZE-4],virtual_leds[3],~pb_sw[1],~virtual_sw[1:0]};
   assign reg_intf_write                = (&counter[COUNT_WR_SIZE-1:0] == 1) ? 1'b1 : 1'b0;
   assign reg_intf_read                 = (&counter[COUNT_RD_SIZE-1:0] == 1) ? 1'b1 : 1'b0;
 
