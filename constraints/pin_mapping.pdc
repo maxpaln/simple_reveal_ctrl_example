@@ -38,9 +38,9 @@ ldc_set_port -iobuf {IO_TYPE=LVCMOS18} [get_ports {pb_sw[1]}]
 #ldc_set_location -site {J16} [get_ports {pb_sw[2]}] # Assigned to rstn
 
 # Clocks
-ldc_set_location -site {F16} [get_ports system_25m_clk]
+#ldc_set_location -site {F16} [get_ports system_25m_clk]
 ldc_set_location -site {H11} [get_ports clk_customer1]
-ldc_set_location -site {H13} [get_ports clk_customer2]
+#ldc_set_location -site {H13} [get_ports clk_customer2]
 ldc_set_sysconfig {JTAG_PORT=ENABLE}
 
 # User Signals
