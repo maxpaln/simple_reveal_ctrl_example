@@ -88,19 +88,67 @@ module top_rvl_ctrl_ex # (
   reg  [7:0]                           seven_seg_int;
 
   // User Register Interface Signals
-  //reg                                  usr_ce;
   reg                                  usr_we;
   reg  [RVL_REG_ADDR_WIDTH-1:0]        usr_addr;
   reg  [RVL_REG_DATA_WIDTH-1:0]        usr_wdata;
   wire [RVL_REG_DATA_WIDTH-1:0]        usr_rdata;
 
   // Reveal Switch and LED Signals
+  wire [RVL_LED_WIDTH-1:0]             virtual_leds_signals;
   wire [RVL_LED_WIDTH-1:0]             virtual_leds;
   wire [RVL_SWITCH_WIDTH-1:0]          virtual_sw;
 
+  ////////////////////////////////////////////////////////
+  //
+  // Reveal Controller Instantiations
+  //
+  ////////////////////////////////////////////////////////
+
+  // Reveal Controller Register Interface Module
+  rvl_ctrl_reg_intf_mod # (
+    .ADDR_WIDTH                        (RVL_REG_ADDR_WIDTH),
+    .DATA_WIDTH                        (RVL_REG_DATA_WIDTH)
+  ) i_rvl_ctrl_reg_intf_mod (
+    .usr_rst                           (~rstn),
+    .usr_clk                           (sys_clk),
+    .usr_ce                            (1'b1),
+    .usr_we                            (usr_we),
+    .usr_addr                          (usr_addr),
+    .usr_wdata                         (usr_wdata),
+    .usr_rdata                         (usr_rdata)
+  );
+
+  // Reveal Controller Switch Module
+  rvl_ctrl_switch_mod # (
+    .WIDTH                             (RVL_SWITCH_WIDTH)
+  ) i_rvl_ctrl_switch_mod (
+    .rstn                              (rstn),
+    .clk                               (sys_clk),
+    .virtual_sw                        (virtual_sw)
+  );
+
+  // Reveal Controller LED Module
+  rvl_ctrl_led_mod # (
+    .WIDTH                             (RVL_LED_WIDTH)
+  ) i_rvl_ctrl_led_mod (
+    .rstn                              (rstn),
+    .clk                               (sys_clk),
+    .dut_sigs                          (virtual_leds_signals),
+    .reveal_ctrl_leds                  (virtual_leds)
+  );
+
+  // Select Signals to connect to Virtual LEDs
+  assign virtual_leds_signals          = {counter[COUNT_RD_SIZE-1],pb_sw[1],virtual_sw[1],virtual_sw[0]};
+
+  ////////////////////////////////////////////////////////
+  //
+  // Sample Design Logic
+  //
+  ////////////////////////////////////////////////////////
+
   // Assignments to get the design to do something interesting...
   assign sys_clk                       = clk_customer1;
-  assign leds                          = {counter[COUNT_RD_SIZE-1:COUNT_RD_SIZE-4],virtual_leds[3],~pb_sw[1],~virtual_sw[1:0]};
+  assign leds                          = {counter[COUNT_RD_SIZE-1:COUNT_RD_SIZE-4],~virtual_leds[3:0]};
   assign reg_intf_write                = (&counter[COUNT_WR_SIZE-1:0] == 1) ? 1'b1 : 1'b0;
   assign reg_intf_read                 = (&counter[COUNT_RD_SIZE-1:0] == 1) ? 1'b1 : 1'b0;
 
@@ -169,39 +217,6 @@ module top_rvl_ctrl_ex # (
     .clk                               (sys_clk),
     .pulse_in                          (reg_intf_read),
     .ext_out                           (reg_intf_read_ext)
-  );
-
-  // Reveal Controller Register Interface Module
-  rvl_ctrl_reg_intf_mod # (
-    .ADDR_WIDTH                        (RVL_REG_ADDR_WIDTH),
-    .DATA_WIDTH                        (RVL_REG_DATA_WIDTH)
-  ) i_rvl_ctrl_reg_intf_mod (
-    .usr_rst                           (~rstn),
-    .usr_clk                           (sys_clk),
-    .usr_ce                            (1'b1),
-    .usr_we                            (usr_we),
-    .usr_addr                          (usr_addr),
-    .usr_wdata                         (usr_wdata),
-    .usr_rdata                         (usr_rdata)
-  );
-
-  // Reveal Controller Switch Module
-  rvl_ctrl_switch_mod # (
-    .WIDTH                             (RVL_SWITCH_WIDTH)
-  ) i_rvl_ctrl_switch_mod (
-    .rstn                              (rstn),
-    .clk                               (sys_clk),
-    .virtual_sw                        (virtual_sw)
-  );
-
-  // Reveal Controller LED Module
-  rvl_ctrl_led_mod # (
-    .WIDTH                             (RVL_LED_WIDTH)
-  ) i_rvl_ctrl_led_mod (
-    .rstn                              (rstn),
-    .clk                               (sys_clk),
-    .dut_sigs                          ({counter[COUNT_RD_SIZE-1],pb_sw[1],virtual_sw[1],virtual_sw[0]}),
-    .reveal_ctrl_leds                  (virtual_leds)
   );
   
 endmodule

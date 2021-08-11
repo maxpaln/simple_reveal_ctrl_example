@@ -1,4 +1,4 @@
-<Project ModBy="Analyzer" Date="2021-08-11" Name="E:/GitHub/jtag_work/simple_rvl_ctrl_example/test/simple_reveal_ctrl_example/Reveal/simple_rvl_ctrl_ex.rvs">
+<Project ModBy="Analyzer" Date="2021-08-11" Name="E:/GitHub/jtag_work/simple_rvl_ctrl_example/simple_rvl_ctrl_ex/Reveal/simple_rvl_ctrl_ex.rvs">
  <Core Name="top_rvl_ctrl_ex_LA0">
   <Setting>
    <Capture SamplesPerTrig="64" NumTrigsCap="6"/>
