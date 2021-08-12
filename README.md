@@ -183,7 +183,7 @@ The most reliable way to close the Radiant Controller is via the TCL console (ei
 the Radiant GUI or Standalone Radiant TCL Console). At the TCL prompt run the
 'rva_close_controller' command:
 
-'> rva_close_controller'
+`> rva_close_controller`
 
 2.3.2 Running Reveal Controller via the TCL Console in the Radiant GUI
 ----------------------------------------------------------------------
@@ -205,6 +205,26 @@ using the following syntax:
 
 Where <cmd> is any syntax matching a TCL command. Wildcards are supported. For example:
 
-`> help rva*`
+`> help rva*controller`
 
-Will show a complete 
+Will show a complete list of Reveal Analyzer commands. This is the resulting output:
+
+`> help rva*controller
+-----------------------------------------------------------------------------------------------------
+Commands                           | Description
+-----------------------------------------------------------------------------------------------------
+rva_close_controller               | Close Controller connection
+rva_export_controller              | Export Controller file
+rva_import_controller              | Import Controller file
+rva_open_controller                | Open Controller connection
+rva_read_controller                | Read Controller data
+rva_run_controller                 | Run Controller command
+rva_set_controller                 | Set Controller options
+rva_target_controller              | Set Controller core target
+rva_write_controller               | Write Controller data
+-----------------------------------------------------------------------------------------------------`
+
+For help on an individual command, type 'help <command>'. For example: help prj_open
+
+
+
