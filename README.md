@@ -201,10 +201,10 @@ The TCL Interface to is available via the TCL Console tab in the Radiant GUI (at
 bottom of the GUI). At the TCL Console it is possible to get help on a particular command
 using the following syntax:
 
-> help <cmd>
+`> help <cmd>`
 
 Where <cmd> is any syntax matching a TCL command. Wildcards are supported. For example:
 
-> help rva*
+`> help rva*`
 
 Will show a complete 
