@@ -183,7 +183,7 @@ The most reliable way to close the Radiant Controller is via the TCL console (ei
 the Radiant GUI or Standalone Radiant TCL Console). At the TCL prompt run the
 'rva_close_controller' command:
 
-> rva_close_controller
+'> rva_close_controller'
 
 2.3.2 Running Reveal Controller via the TCL Console in the Radiant GUI
 ----------------------------------------------------------------------
