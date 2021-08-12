@@ -209,7 +209,8 @@ Where <cmd> is any syntax matching a TCL command. Wildcards are supported. For e
 
 Will show a complete list of Reveal Analyzer commands. This is the resulting output:
 
-`> help rva*controller
+```
+> help rva*controller
 -----------------------------------------------------------------------------------------------------
 Commands                           | Description
 -----------------------------------------------------------------------------------------------------
@@ -222,7 +223,8 @@ rva_run_controller                 | Run Controller command
 rva_set_controller                 | Set Controller options
 rva_target_controller              | Set Controller core target
 rva_write_controller               | Write Controller data
------------------------------------------------------------------------------------------------------`
+-----------------------------------------------------------------------------------------------------
+```
 
 For help on an individual command, type 'help <command>'. For example: help prj_open
 
