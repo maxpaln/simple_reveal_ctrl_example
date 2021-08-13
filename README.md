@@ -15,12 +15,16 @@ This package includes:
   are provided as examples and should not be considered complete or final.
 - Programmer files (@ Programmer/). An XCF programming file is provided
   for the Certus-NX Versa Board. This file can be used with Reveal
-  Programmer v3.0 or newer.
+  Programmer.
 - Reveal Controller Files (@ Reveal/). These include the Inserter,
   Analyser and Controller setup for the example design.
 
 It is assumed the user is familiar with the basic operation of the Radiant
-SW and the Radiant Programmer.
+SW and the Radiant Programmer. The user should also have 
+
+The user will also need the following:
+- Certus-NX Versa Evaluation Board Rev B
+- Radiant Software Suite v3.0
 
 2.0 User Guide
 ==============
@@ -183,9 +187,70 @@ The most reliable way to close the Radiant Controller is via the TCL console (ei
 the Radiant GUI or Standalone Radiant TCL Console). At the TCL prompt run the
 'rva_close_controller' command:
 
-`> rva_close_controller`
+```
+> rva_close_controller
+```
 
-2.3.2 Running Reveal Controller via the TCL Console in the Radiant GUI
+2.3.2 Interacting with the example design via Reveal Controller
+---------------------------------------------------------------
+
+Although not strictly part of the Reveal Controller usage, the following is a short
+desciption of the behaviour in the DUT that is controllable from the Virtual Switches/LEDs
+and the resulting changes that can be seen on the evaluation board.
+
+2.3.2.1 Default behaviour before Reveal Controller is connected
+---------------------------------------------------------------
+
+The example design makes use of the 7-segment LED output (D36) the bank of 8 Green LEDs
+adjacent to the DIP Switches and Push Buttons (D18, D19, D20, D21, D22, D23, D24, D25) and
+Push Buttons 2. Push Button 3 acts as an asynchronous reset to the system - depressing
+push button 3 will assert the reset.
+
+When first programmed, LEDs D22, D23, D24, D25 will show a counter. LEDs D18, D19 will be
+off, D20 will be illuminated and D21 will mirror D25. The 7-segment display will be off.
+
+2.3.2.2 Reveal Controller behaviour
+-----------------------------------
+
+- LED Bank:
+
+LEDs D22, D23, D24, D25 will always show a counter. LEDs D18, D19, D20, D21 will show
+the output of the Virtual LEDs.
+
+- 7-Segment Display:
+
+The output of the seven segment display will update based on the data written to the
+Register interface. The 7-segment displlay will not illuminate until the reveal controller
+is connected.
+
+- Virtual LEDs:
+
+The Virtual LEDs are assigned as follows:
+
+Bit 0 : D18 : Will display the state of Virtual Switch Bit 0
+Bit 1 : D19 : Will display the state of Virtual Switch Bit 1
+Bit 2 : D20 : Will display the state of Push Button 2
+Bit 3 : D21 : Will display the state of the Counter MSB (D25)
+
+In the case of Bit 0, 1 and 2 - the LEDs will illuminate when the Virtual Switch or push
+button 2 is asserted.
+
+- Virtual Switches:
+
+The Virtual Switches control the following behaviour:
+
+Bit 0 : Change the counter direction. Asserting bit 0 will count down, deasserting will
+        count up
+Bit 1 : Invert the polarity of the 7-segment controller output.
+
+Once the Reveal Controller is connected changes to the Virtual Switches will be reflected
+in the state of the LEDs (D18, D19), the direction of the Counter and the output on the
+7-segment display. The user can also read/write to the Register Interface to confirm the
+correct functionality. It should be noted that address range 0x90000000 to 0x9000000F is
+written by the example design so will periodically be updated. Address range 0x9000000F to
+0x9000FFFF is unused can be read/written as needed.
+
+2.3.3 Running Reveal Controller via the TCL Console in the Radiant GUI
 ----------------------------------------------------------------------
 
 The TCL interface to Reveal Analyzer / Controller provides all the functionality available
@@ -197,15 +262,22 @@ Further to this, the TCL interface offers a richer set of commands than the Radi
 interface. By using the TCL interface the full range of functionality available in the
 Reveal Controller is exposed. 
 
+2.3.3.1 The TCL Console
+-----------------------
+
 The TCL Interface to is available via the TCL Console tab in the Radiant GUI (at the
 bottom of the GUI). At the TCL Console it is possible to get help on a particular command
 using the following syntax:
 
-`> help <cmd>`
+```
+> help <cmd>
+```
 
 Where <cmd> is any syntax matching a TCL command. Wildcards are supported. For example:
 
-`> help rva*controller`
+```
+> help rva*controller
+```
 
 Will show a complete list of Reveal Analyzer commands. This is the resulting output:
 
@@ -224,9 +296,105 @@ rva_set_controller                 | Set Controller options
 rva_target_controller              | Set Controller core target
 rva_write_controller               | Write Controller data
 -----------------------------------------------------------------------------------------------------
-```
 
 For help on an individual command, type 'help <command>'. For example: help prj_open
+```
 
+Similarly, help on a specific command can be printed by using the full command name in the
+help command:
 
+```
+> help rva_run_controller
+```
 
+This is the resulting output:
+
+```
+> help rva_run_controller
+rva_run_controller - Run command for Virtual LED, Virtual Switch, User Register and Hard IP
+  Usage:
+    rva_run_controller -read_led|-read_switch|-write_switch <data>|-dump_memfile <mem_file>|-load_memfile <mem_file>|-read_ip <ipname>|-write_ip <ipname>
+    -read_led: Read data from Virtual LED
+    -read_switch: Read data from Virtual Switch
+    -write_switch: Write data to Virtual Switch
+    -dump_memfile: Dump data from User Register to mem_file
+    -load_memfile: Load data from mem_file to User Register
+    -read_ip: Read data from Hard IP register
+    -write_ip: Write data to Hard IP register
+```
+
+2.3.3.2 Interfacing with the Virtual Switches/LEDs and Register interface via TCL
+---------------------------------------------------------------------------------
+
+The basic process to run the Reveal Controller is as follows:
+
+- Open the Reveal Controller via 'rva_open_controller'
+- Execute the relevant Controller Commands'
+- Close the Reveal Controller via 'rva_close_controller'
+
+It is not strictly necessary to close the Reveal Controller between commands. But as
+described in section 2.3.1.5 above, leaving the Reveal Controller connected can interfere
+with other SW that is trying to use the JTAG interface.
+
+An example set of commands using rva_run_controller is as follows
+
+```
+> rva_open controller
+> rva_run_controller -write_switch 0x3
+> rva_run_controller -read_switch
+> rva_run_controller -read_led
+> rva_close_controller
+```
+
+The user can refer to section 2.3.2 for a description of the functionality that can be
+controller from the Reveal Controller.
+
+2.3.3.3 USB Cable Setup via TCL
+-------------------------------
+
+If the 'rva_open_controller' command is unable to connect to the design, the most likelt
+cause is that the USB Cable Setup is incorrect. The rva_set_controller command can be used
+to correctly configure the USB Cable. This command is the alternative to the 'Detect
+Cable' button in the GUI.
+
+The cable type should be set to USb2 for the Certus-NX Versa Board. The port can vary
+depending on the number of USB connections on the host system. 
+
+```
+> rva_set_controller -cable_type USB2
+> rva_set_controller -cable_port 1
+```
+
+The current settings for the cable can be printed using the following command:
+
+```
+> rva_set_controller
+```
+
+2.3.4 Running Reveal Controller via the Standalone TCL Console
+--------------------------------------------------------------
+
+The Standalone TCL console is largely identical to the Radiant GUI TCL Console. All
+commands that can be issued at the Radiant GUI TCL Console can also be issued via the
+Radiant Standalone TCL Console. As such the user can refer to section 2.3.3 for guidance
+on the TCL commands that can be used with the Standalone TCL Console.
+
+It is necessary to set the cable connection (see Section 2.3.2) and open the Radiant
+Project before opening the Radiant Controller. To do this:
+
+- change working directory to the folder containing the Radiant Project.
+- Open the Radiant project using the following command
+
+```
+% prj_open simple_rvl_ctrl_ex.rdf
+```
+
+- Set the cable connection - See section 2.3.3.3.
+- Open the Reveal Controller
+
+```
+% rva_open_controller
+```
+
+From here all the commands described in section 2.3.3 can be run from the Standalone TCL
+Console.
