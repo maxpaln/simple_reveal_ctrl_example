@@ -34,7 +34,7 @@ The user will also need the following:
 
 The basic flow for using the design is as follows:
 
-- Open the Design in Radiant 3.0 or newer
+- Open the Design in Radiant 3.2 or newer
 - Build the design to generate a programming bitstream
 - Program the bitstream into the Certus-NX Versa Board.
 - Open the Reveal Controller (via GUI or TCL prompt) to interfact with
@@ -167,8 +167,22 @@ Open the Register Interface view by clicking on the tab labelled 'User Register'
 this tab it is possible to write/read values to/from any valid address. NOTE: the valid
 address range is shown at the top of the tab. The range is 0x90000000 to 0x9000FFFF).
 
-In this example design, register values between 0x90000000 and 0x9000000F are
-automatically updated by the RTL.
+The operation of the register interface uses the following flow control:
+
+// User Logic pseudo code
+Step 1: Wait for write from JTAG side (Host Machine) to address 0x0 – detected by
+        observing bit [0] of address 0x0 set to ‘1’ in User Logic. Bits 31:1 must be
+        latched once bit 0 is detected as ‘1’. 
+Step 2: Wait for write from JTAG side (Host Machine) to clear address 0x0 – detected
+        by observing bit [0] set to ‘0’ in User Logic. Since bits 31:1 have been
+        latched in step 1, this write from the host machine can completely clear
+        register addr 0x0 to 0x00000000
+Step 3: Execute command stored from address 0x0 (bits [31:1]) during Step 1.
+Step 4: return to step 1
+
+NOTE: It is recommended that all user applications utilise this flow control to avoid
+race conditions between the user application and the Reveal Controller logic around
+the Register Interface RAM.
 
 It is also possible to write/read a range of memory values using the memory dump feature.
 Specify the memory range and file to load (if writing to the registers) or 'dump' (if
@@ -214,41 +228,41 @@ off, D20 will be illuminated and D21 will mirror D25. The 7-segment display will
 
 - LED Bank:
 
-LEDs D22, D23, D24, D25 will always show a counter. LEDs D18, D19, D20, D21 will show
-the output of the Virtual LEDs.
+LEDs D22, D23, D24, D25 will show a counter based on the value of the Virtual Switches
+(see below):
+
+LEDs D18, D19, D20, D21 will show the output of the Virtual LEDs.
 
 - 7-Segment Display:
 
-The output of the seven segment display will update based on the data written to the
-Register interface. The 7-segment displlay will not illuminate until the reveal controller
-is connected.
+The decimal point indicator shows when bit 0 of address 0x0 has been detected by the user
+application (this indicates the upper bits of address 0x0 have been latched).
+When bit 0 is cleared, the decimal point turns off and the 7-segment display will show the
+character written to the upper 4-bits of the address 0x0. For example, to show the character
+'A' on the 7-segment display the following two register writes should be performed:
+
+Data 0xA001 should be written to address 0x90000000 (The decimal point will illuminate)
+Data 0x0000 should be written to address 0x90000000 (the 7-segment will show 'A')
 
 - Virtual LEDs:
 
 The Virtual LEDs are assigned as follows:
 
-Bit 0 : D18 : Will display the state of Virtual Switch Bit 0
-Bit 1 : D19 : Will display the state of Virtual Switch Bit 1
-Bit 2 : D20 : Will display the state of Push Button 2
-Bit 3 : D21 : Will display the state of the Counter MSB (D25)
-
-In the case of Bit 0, 1 and 2 - the LEDs will illuminate when the Virtual Switch or push
-button 2 is asserted.
+Bit 3:0 : Will display the state of Virtual Switch Bits 3:0
+Bit 4   : Will display the state of the Push Button 2 (PB2)
 
 - Virtual Switches:
 
 The Virtual Switches control the following behaviour:
 
-Bit 0 : Change the counter direction. Asserting bit 0 will count down, deasserting will
-        count up
-Bit 1 : Invert the polarity of the 7-segment controller output.
-
-Once the Reveal Controller is connected changes to the Virtual Switches will be reflected
-in the state of the LEDs (D18, D19), the direction of the Counter and the output on the
-7-segment display. The user can also read/write to the Register Interface to confirm the
-correct functionality. It should be noted that address range 0x90000000 to 0x9000000F is
-written by the example design so will periodically be updated. Address range 0x9000000F to
-0x9000FFFF is unused can be read/written as needed.
+// Counter Logic Pseudo Code
+// if (Virtual Switch Bit 0 is set)
+//   The counter is running (Virtual Switch Bit 1 defines the direction)
+// else
+//   if (Virtual Switch Bit 2 is set)
+//     Clear the counter (set to all 0s)
+//   else if (Virtual Switch Bit 3 is set)
+//     Set the counter to all 1s
 
 2.3.3 Running Reveal Controller via the TCL Console in the Radiant GUI
 ----------------------------------------------------------------------

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RadiantProject version="4.2" title="simple_rvl_ctrl_ex" device="LFD2NX-40-8BG256C" performance_grade="8_High-Performance_1.0V" default_implementation="impl_1">
+<RadiantProject version="4.2" radiant="3.2.1.217.3" title="simple_rvl_ctrl_ex" device="LFD2NX-40-8BG256C" performance_grade="8_High-Performance_1.0V" default_implementation="impl_1">
     <Options/>
     <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="synplify" default_strategy="Strategy1">
         <Options def_top="top_rvl_ctrl_ex"/>
@@ -9,7 +9,7 @@
         <Source name="src/rvl_ctrl_reg_intf_mod.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="src/pulse_extender.v" type="Verilog" type_short="Verilog">
+        <Source name="src/pulse_extender.v" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options/>
         </Source>
         <Source name="src/rvl_ctrl_switch_mod.v" type="Verilog" type_short="Verilog">

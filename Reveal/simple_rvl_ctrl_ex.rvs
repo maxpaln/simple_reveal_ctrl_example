@@ -1,4 +1,4 @@
-<Project Date="2021-08-11" ModBy="Analyzer" Name="E:/GitHub/jtag_work/simple_rvl_ctrl_example/simple_rvl_ctrl_ex/Reveal/simple_rvl_ctrl_ex.rvs">
+<Project ModBy="Analyzer" Name="C:/Users/mholdswo/Github/simple_reveal_ctrl_example/Reveal/simple_rvl_ctrl_ex.rvs" Date="2022-09-29">
  <Core Name="top_rvl_ctrl_ex_LA0">
   <Setting>
    <Capture SamplesPerTrig="64" NumTrigsCap="6"/>
@@ -7,7 +7,31 @@
   </Setting>
   <Dataset Name="Base">
    <Trace>
-    <Bus Radix="0" Name="usr_wdata">
+    <Bus Name="reg_rx_data" Radix="0">
+     <Sig Name="reg_rx_data:0"/>
+     <Sig Name="reg_rx_data:1"/>
+     <Sig Name="reg_rx_data:2"/>
+     <Sig Name="reg_rx_data:3"/>
+     <Sig Name="reg_rx_data:4"/>
+     <Sig Name="reg_rx_data:5"/>
+     <Sig Name="reg_rx_data:6"/>
+     <Sig Name="reg_rx_data:7"/>
+     <Sig Name="reg_rx_data:8"/>
+     <Sig Name="reg_rx_data:9"/>
+     <Sig Name="reg_rx_data:10"/>
+     <Sig Name="reg_rx_data:11"/>
+     <Sig Name="reg_rx_data:12"/>
+     <Sig Name="reg_rx_data:13"/>
+     <Sig Name="reg_rx_data:14"/>
+     <Sig Name="reg_rx_data:15"/>
+    </Bus>
+    <Bus Name="reg_state" Radix="0">
+     <Sig Name="reg_state:0"/>
+     <Sig Name="reg_state:1"/>
+     <Sig Name="reg_state:2"/>
+     <Sig Name="reg_state:3"/>
+    </Bus>
+    <Bus Name="usr_wdata" Radix="0">
      <Sig Name="usr_wdata:0"/>
      <Sig Name="usr_wdata:1"/>
      <Sig Name="usr_wdata:2"/>
@@ -25,7 +49,7 @@
      <Sig Name="usr_wdata:14"/>
      <Sig Name="usr_wdata:15"/>
     </Bus>
-    <Bus Radix="0" Name="usr_rdata">
+    <Bus Name="usr_rdata" Radix="0">
      <Sig Name="usr_rdata:0"/>
      <Sig Name="usr_rdata:1"/>
      <Sig Name="usr_rdata:2"/>
@@ -43,7 +67,7 @@
      <Sig Name="usr_rdata:14"/>
      <Sig Name="usr_rdata:15"/>
     </Bus>
-    <Bus Radix="0" Name="usr_addr">
+    <Bus Name="usr_addr" Radix="0">
      <Sig Name="usr_addr:0"/>
      <Sig Name="usr_addr:1"/>
      <Sig Name="usr_addr:2"/>
@@ -52,24 +76,17 @@
      <Sig Name="usr_addr:5"/>
      <Sig Name="usr_addr:6"/>
      <Sig Name="usr_addr:7"/>
-     <Sig Name="usr_addr:8"/>
-     <Sig Name="usr_addr:9"/>
-     <Sig Name="usr_addr:10"/>
-     <Sig Name="usr_addr:11"/>
-     <Sig Name="usr_addr:12"/>
-     <Sig Name="usr_addr:13"/>
-     <Sig Name="usr_addr:14"/>
-     <Sig Name="usr_addr:15"/>
     </Bus>
     <Sig Name="usr_we"/>
    </Trace>
    <Trigger>
-    <TU Radix="3" Value="04000000" Index="0" Operator="0" ID="1" Name="COUNTER"/>
-    <TU Radix="3" Value="0" Index="2" Operator="1" ID="2" Name="SW"/>
-    <TU Radix="3" Value="0" Index="4" Operator="1" ID="3" Name="PB"/>
-    <TU Radix="0" Value="1" Index="1" Operator="0" ID="4" Name="REG_RD"/>
-    <TU Radix="0" Value="1" Index="3" Operator="0" ID="5" Name="REG_WR"/>
-    <TE Index="1" Enable="1" ID="1" Expression="REG_WR" Name="TE1"/>
+    <TU Operator="0" Index="0" ID="1" Name="COUNTER" Radix="3" Value="4000000"/>
+    <TU Operator="1" Index="2" ID="2" Name="SW" Radix="3" Value="0"/>
+    <TU Operator="1" Index="4" ID="3" Name="PB" Radix="3" Value="0"/>
+    <TU Operator="0" Index="1" ID="4" Name="REG_RD" Radix="0" Value="0"/>
+    <TU Operator="0" Index="3" ID="5" Name="REG_WR" Radix="0" Value="1"/>
+    <TU Operator="0" Index="5" ID="6" Name="REG_ADDR" Radix="3" Value="FF"/>
+    <TE Index="1" Expression="REG_WR &amp; REG_ADDR" ID="1" Name="TE1" Enable="1"/>
    </Trigger>
   </Dataset>
  </Core>

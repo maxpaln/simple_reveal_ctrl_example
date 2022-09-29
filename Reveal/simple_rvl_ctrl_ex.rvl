@@ -1,101 +1,120 @@
-<Project SigType="0" ModBy="Inserter" Name="E:/GitHub/jtag_work/simple_rvl_ctrl_example/simple_rvl_ctrl_ex/Reveal/simple_rvl_ctrl_ex.rvl" Date="2021-08-10">
+<Project ModBy="Inserter" Name="C:/Users/mholdswo/Github/simple_reveal_ctrl_example/Reveal/simple_rvl_ctrl_ex.rvl" SigType="0" Date="2022-09-29">
     <IP Version="1_6_042617"/>
-    <Design DeviceFamily="LFD2NX" JTAG="hard" Synthesis="synplify" DesignEntry="Schematic/Verilog HDL" DesignName="simple_rvl_ctrl_ex"/>
-    <Core InsertDataset="0" Insert="1" Reveal_sig="370472560" Name="top_rvl_ctrl_ex_LA0" ID="0">
+    <Design DeviceFamily="LFD2NX" DesignName="simple_rvl_ctrl_ex" JTAG="hard" Synthesis="synplify" DesignEntry="Schematic/Verilog HDL"/>
+    <Core Insert="1" ID="0" Name="top_rvl_ctrl_ex_LA0" InsertDataset="0" Reveal_sig="444251574">
         <Setting>
-            <Clock EnableClk_Pri="0" SampleEnable="0" EnableClk="" SampleClk="sys_clk"/>
-            <TraceBuffer BitTimeStamp="0" Implementation="0" BufferDepth="1024" IncTrigSig="1" hasTimeStamp="0"/>
+            <Clock EnableClk="" SampleClk="sys_clk" EnableClk_Pri="0" SampleEnable="0"/>
+            <TraceBuffer BufferDepth="1024" Implementation="0" hasTimeStamp="0" IncTrigSig="1" BitTimeStamp="0"/>
             <Capture Mode="1" MinSamplesPerTrig="8"/>
             <Event CntEnable="0" MaxEventCnt="8"/>
-            <TrigOut EnableTrigOut="0" TrigOutNetType="1" Polarity="0" TrigOutNet="reveal_debug_top_rvl_ctrl_ex_LA0_net" MinPulseWidth="0"/>
+            <TrigOut TrigOutNet="reveal_debug_top_rvl_ctrl_ex_LA0_net" EnableTrigOut="0" MinPulseWidth="0" TrigOutNetType="1" Polarity="0"/>
             <DistRAM Disable="0"/>
         </Setting>
         <Dataset Name="Base">
             <Trace>
+                <Bus Name="reg_rx_data">
+                    <Sig Type="SIG" Name="reg_rx_data:0"/>
+                    <Sig Type="SIG" Name="reg_rx_data:1"/>
+                    <Sig Type="SIG" Name="reg_rx_data:2"/>
+                    <Sig Type="SIG" Name="reg_rx_data:3"/>
+                    <Sig Type="SIG" Name="reg_rx_data:4"/>
+                    <Sig Type="SIG" Name="reg_rx_data:5"/>
+                    <Sig Type="SIG" Name="reg_rx_data:6"/>
+                    <Sig Type="SIG" Name="reg_rx_data:7"/>
+                    <Sig Type="SIG" Name="reg_rx_data:8"/>
+                    <Sig Type="SIG" Name="reg_rx_data:9"/>
+                    <Sig Type="SIG" Name="reg_rx_data:10"/>
+                    <Sig Type="SIG" Name="reg_rx_data:11"/>
+                    <Sig Type="SIG" Name="reg_rx_data:12"/>
+                    <Sig Type="SIG" Name="reg_rx_data:13"/>
+                    <Sig Type="SIG" Name="reg_rx_data:14"/>
+                    <Sig Type="SIG" Name="reg_rx_data:15"/>
+                </Bus>
+                <Bus Name="reg_state">
+                    <Sig Type="SIG" Name="reg_state:0"/>
+                    <Sig Type="SIG" Name="reg_state:1"/>
+                    <Sig Type="SIG" Name="reg_state:2"/>
+                    <Sig Type="SIG" Name="reg_state:3"/>
+                </Bus>
                 <Bus Name="usr_wdata">
-                    <Sig Name="usr_wdata:0" Type="SIG"/>
-                    <Sig Name="usr_wdata:1" Type="SIG"/>
-                    <Sig Name="usr_wdata:2" Type="SIG"/>
-                    <Sig Name="usr_wdata:3" Type="SIG"/>
-                    <Sig Name="usr_wdata:4" Type="SIG"/>
-                    <Sig Name="usr_wdata:5" Type="SIG"/>
-                    <Sig Name="usr_wdata:6" Type="SIG"/>
-                    <Sig Name="usr_wdata:7" Type="SIG"/>
-                    <Sig Name="usr_wdata:8" Type="SIG"/>
-                    <Sig Name="usr_wdata:9" Type="SIG"/>
-                    <Sig Name="usr_wdata:10" Type="SIG"/>
-                    <Sig Name="usr_wdata:11" Type="SIG"/>
-                    <Sig Name="usr_wdata:12" Type="SIG"/>
-                    <Sig Name="usr_wdata:13" Type="SIG"/>
-                    <Sig Name="usr_wdata:14" Type="SIG"/>
-                    <Sig Name="usr_wdata:15" Type="SIG"/>
+                    <Sig Type="SIG" Name="usr_wdata:0"/>
+                    <Sig Type="SIG" Name="usr_wdata:1"/>
+                    <Sig Type="SIG" Name="usr_wdata:2"/>
+                    <Sig Type="SIG" Name="usr_wdata:3"/>
+                    <Sig Type="SIG" Name="usr_wdata:4"/>
+                    <Sig Type="SIG" Name="usr_wdata:5"/>
+                    <Sig Type="SIG" Name="usr_wdata:6"/>
+                    <Sig Type="SIG" Name="usr_wdata:7"/>
+                    <Sig Type="SIG" Name="usr_wdata:8"/>
+                    <Sig Type="SIG" Name="usr_wdata:9"/>
+                    <Sig Type="SIG" Name="usr_wdata:10"/>
+                    <Sig Type="SIG" Name="usr_wdata:11"/>
+                    <Sig Type="SIG" Name="usr_wdata:12"/>
+                    <Sig Type="SIG" Name="usr_wdata:13"/>
+                    <Sig Type="SIG" Name="usr_wdata:14"/>
+                    <Sig Type="SIG" Name="usr_wdata:15"/>
                 </Bus>
                 <Bus Name="usr_rdata">
-                    <Sig Name="usr_rdata:0" Type="SIG"/>
-                    <Sig Name="usr_rdata:1" Type="SIG"/>
-                    <Sig Name="usr_rdata:2" Type="SIG"/>
-                    <Sig Name="usr_rdata:3" Type="SIG"/>
-                    <Sig Name="usr_rdata:4" Type="SIG"/>
-                    <Sig Name="usr_rdata:5" Type="SIG"/>
-                    <Sig Name="usr_rdata:6" Type="SIG"/>
-                    <Sig Name="usr_rdata:7" Type="SIG"/>
-                    <Sig Name="usr_rdata:8" Type="SIG"/>
-                    <Sig Name="usr_rdata:9" Type="SIG"/>
-                    <Sig Name="usr_rdata:10" Type="SIG"/>
-                    <Sig Name="usr_rdata:11" Type="SIG"/>
-                    <Sig Name="usr_rdata:12" Type="SIG"/>
-                    <Sig Name="usr_rdata:13" Type="SIG"/>
-                    <Sig Name="usr_rdata:14" Type="SIG"/>
-                    <Sig Name="usr_rdata:15" Type="SIG"/>
+                    <Sig Type="SIG" Name="usr_rdata:0"/>
+                    <Sig Type="SIG" Name="usr_rdata:1"/>
+                    <Sig Type="SIG" Name="usr_rdata:2"/>
+                    <Sig Type="SIG" Name="usr_rdata:3"/>
+                    <Sig Type="SIG" Name="usr_rdata:4"/>
+                    <Sig Type="SIG" Name="usr_rdata:5"/>
+                    <Sig Type="SIG" Name="usr_rdata:6"/>
+                    <Sig Type="SIG" Name="usr_rdata:7"/>
+                    <Sig Type="SIG" Name="usr_rdata:8"/>
+                    <Sig Type="SIG" Name="usr_rdata:9"/>
+                    <Sig Type="SIG" Name="usr_rdata:10"/>
+                    <Sig Type="SIG" Name="usr_rdata:11"/>
+                    <Sig Type="SIG" Name="usr_rdata:12"/>
+                    <Sig Type="SIG" Name="usr_rdata:13"/>
+                    <Sig Type="SIG" Name="usr_rdata:14"/>
+                    <Sig Type="SIG" Name="usr_rdata:15"/>
                 </Bus>
                 <Bus Name="usr_addr">
-                    <Sig Name="usr_addr:0" Type="SIG"/>
-                    <Sig Name="usr_addr:1" Type="SIG"/>
-                    <Sig Name="usr_addr:2" Type="SIG"/>
-                    <Sig Name="usr_addr:3" Type="SIG"/>
-                    <Sig Name="usr_addr:4" Type="SIG"/>
-                    <Sig Name="usr_addr:5" Type="SIG"/>
-                    <Sig Name="usr_addr:6" Type="SIG"/>
-                    <Sig Name="usr_addr:7" Type="SIG"/>
-                    <Sig Name="usr_addr:8" Type="SIG"/>
-                    <Sig Name="usr_addr:9" Type="SIG"/>
-                    <Sig Name="usr_addr:10" Type="SIG"/>
-                    <Sig Name="usr_addr:11" Type="SIG"/>
-                    <Sig Name="usr_addr:12" Type="SIG"/>
-                    <Sig Name="usr_addr:13" Type="SIG"/>
-                    <Sig Name="usr_addr:14" Type="SIG"/>
-                    <Sig Name="usr_addr:15" Type="SIG"/>
+                    <Sig Type="SIG" Name="usr_addr:0"/>
+                    <Sig Type="SIG" Name="usr_addr:1"/>
+                    <Sig Type="SIG" Name="usr_addr:2"/>
+                    <Sig Type="SIG" Name="usr_addr:3"/>
+                    <Sig Type="SIG" Name="usr_addr:4"/>
+                    <Sig Type="SIG" Name="usr_addr:5"/>
+                    <Sig Type="SIG" Name="usr_addr:6"/>
+                    <Sig Type="SIG" Name="usr_addr:7"/>
                 </Bus>
-                <Sig Name="usr_we" Type="SIG"/>
+                <Sig Type="SIG" Name="usr_we"/>
             </Trace>
             <Trigger>
-                <TU Sig="(BUS)counter[31:0]," Type="0" ID="1" Serialbits="0"/>
-                <TU Sig="(BUS)dip_sw[3:0]," Type="0" ID="2" Serialbits="0"/>
-                <TU Sig="(BUS)pb_sw[2:0]," Type="0" ID="3" Serialbits="0"/>
-                <TU Sig="reg_intf_read," Type="0" ID="4" Serialbits="0"/>
-                <TU Sig="reg_intf_write," Type="0" ID="5" Serialbits="0"/>
-                <TE MaxSequence="4" ID="1" Resource="1" MaxEvnCnt="64"/>
+                <TU Sig="(BUS)counter[27:0]," Type="0" Serialbits="0" ID="1"/>
+                <TU Sig="(BUS)dip_sw[3:0]," Type="0" Serialbits="0" ID="2"/>
+                <TU Sig="(BUS)pb_sw[2:0]," Type="0" Serialbits="0" ID="3"/>
+                <TU Sig="usr_we," Type="0" Serialbits="0" ID="4"/>
+                <TU Sig="usr_we," Type="0" Serialbits="0" ID="5"/>
+                <TU Sig="(BUS)usr_addr[7:0]," Type="0" Serialbits="0" ID="6"/>
+                <TE MaxSequence="4" MaxEvnCnt="64" ID="1" Resource="1"/>
             </Trigger>
         </Dataset>
     </Core>
     <ControllerCore Insert="1" Name="top_Controller">
-        <Switch Begin="0x80000000" Width="2" Insert="1">
-            <SW0 Signal="i_rvl_ctrl_switch_mod/reveal_ctrl_sw:1" Name="SW1"/>
-            <SW1 Signal="i_rvl_ctrl_switch_mod/reveal_ctrl_sw:0" Name="SW0"/>
+        <Switch Insert="1" Begin="0x80000000" Width="4">
+            <SW0 Signal="i_rvl_ctrl_switch_mod/reveal_ctrl_sw:3" Name="SW3"/>
+            <SW1 Signal="i_rvl_ctrl_switch_mod/reveal_ctrl_sw:2" Name="SW2"/>
+            <SW2 Signal="i_rvl_ctrl_switch_mod/reveal_ctrl_sw:1" Name="SW1"/>
+            <SW3 Signal="i_rvl_ctrl_switch_mod/reveal_ctrl_sw:0" Name="SW0"/>
         </Switch>
-        <LED Begin="0x80000001" Width="4" Insert="1">
+        <LED Insert="1" Begin="0x80000001" Width="4">
             <LED0 Signal="i_rvl_ctrl_led_mod/reveal_ctrl_leds:3" Name="LED3"/>
             <LED1 Signal="i_rvl_ctrl_led_mod/reveal_ctrl_leds:2" Name="LED2"/>
             <LED2 Signal="i_rvl_ctrl_led_mod/reveal_ctrl_leds:1" Name="LED1"/>
             <LED3 Signal="i_rvl_ctrl_led_mod/reveal_ctrl_leds:0" Name="LED0"/>
         </LED>
-        <Register Begin="0x90000000" End="0x9000FFFF" Insert="1" DataWidth="16" AddrWidth="16">
-            <Clock Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_32_inst/ClockA"/>
-            <Clock_enable Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_32_inst/ClockEnA"/>
-            <Wr_Rdn Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_32_inst/WrA"/>
-            <Address Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_32_inst/AddressA[15:0]"/>
-            <WData Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_32_inst/DataInA[15:0]"/>
-            <RData Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_32_inst/QA[15:0]"/>
+        <Register AddrWidth="8" Insert="1" Begin="0x90000000" End="0x9000FFFF" DataWidth="16">
+            <Clock Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_inst/ClockA"/>
+            <Clock_enable Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_inst/ClockEnA"/>
+            <Wr_Rdn Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_inst/WrA"/>
+            <Address Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_inst/AddressA[7:0]"/>
+            <WData Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_inst/DataInA[15:0]"/>
+            <RData Name="i_rvl_ctrl_reg_intf_mod/pmi_mem_inst/QA[15:0]"/>
         </Register>
         <HardIP Size="0"/>
     </ControllerCore>

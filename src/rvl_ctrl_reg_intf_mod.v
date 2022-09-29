@@ -1,5 +1,5 @@
 module rvl_ctrl_reg_intf_mod # (
-  parameter                            ADDR_WIDTH          = 16,
+  parameter                            ADDR_WIDTH          = 8,
   parameter                            DATA_WIDTH          = 32
 ) (
   input  wire                          usr_rst,
@@ -21,25 +21,24 @@ module rvl_ctrl_reg_intf_mod # (
   localparam                           ADDR_WIDTH_A        = ADDR_WIDTH;
   localparam                           ADDR_DEPTH_A        = 2**ADDR_WIDTH;
   localparam                           DATA_WIDTH_A        = DATA_WIDTH;
-  localparam                           ADDR_DEPTH_B        = ADDR_WIDTH;
   localparam                           ADDR_WIDTH_B        = ADDR_WIDTH;
+  localparam                           ADDR_DEPTH_B        = 2**ADDR_WIDTH;
   localparam                           DATA_WIDTH_B        = DATA_WIDTH;
-
 
   pmi_ram_dp_true #(
     .pmi_addr_width_a                  (ADDR_WIDTH_A),     // integer       
+    .pmi_addr_depth_a                  (ADDR_DEPTH_A),     // integer       
     .pmi_data_width_a                  (DATA_WIDTH_A),     // integer       
     .pmi_addr_width_b                  (ADDR_WIDTH_B),     // integer       
-    .pmi_data_width_b                  (DATA_WIDTH_B),     // integer       
     .pmi_addr_depth_b                  (ADDR_DEPTH_B),     // integer       
-    .pmi_addr_depth_a                  (ADDR_DEPTH_A),     // integer       
+    .pmi_data_width_b                  (DATA_WIDTH_B),     // integer       
     .pmi_regmode_a                     ("noreg"),          // "reg"|"noreg"     
     .pmi_regmode_b                     ("noreg"),          // "reg"|"noreg"     
     .pmi_resetmode                     ("async"),          // "async" | "sync"	
     //.pmi_init_file                     (),                 // string		
     //.pmi_init_file_format              ( ),                // "binary"|"hex"    
     .pmi_family                        ("LFD2NX")          // "LIFCL"|"LFD2NX"|"LFCPNX"|"common"
-  ) pmi_mem_32_inst (          	
+  ) pmi_mem_inst (          	
     .ResetA                            (usr_rst),          // I:
     .ClockA                            (rvl_clk),          // I:
     .ClockEnA                          (rvl_ce),           // I:

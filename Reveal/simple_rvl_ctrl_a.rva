@@ -26,125 +26,153 @@
   <LACoreCount>1</LACoreCount>
   <WinUI CoreIndex="0" CoreType="LA">
    <TraceSigTreeData>
-    <TraceSignal PortIndex="-1" IsHidden="false" Color="" NodeType="1" Name="COUNTER">
+    <TraceSignal NodeType="1" Color="" Name="COUNTER" IsHidden="false" PortIndex="-1">
      <BusRadix Radix="3"/>
      <IsExpanded Expand="false"/>
     </TraceSignal>
-    <TraceSignal PortIndex="80" IsHidden="false" Color="" NodeType="2" Name="counter:31"/>
-    <TraceSignal PortIndex="79" IsHidden="false" Color="" NodeType="2" Name="counter:30"/>
-    <TraceSignal PortIndex="78" IsHidden="false" Color="" NodeType="2" Name="counter:29"/>
-    <TraceSignal PortIndex="77" IsHidden="false" Color="" NodeType="2" Name="counter:28"/>
-    <TraceSignal PortIndex="76" IsHidden="false" Color="" NodeType="2" Name="counter:27"/>
-    <TraceSignal PortIndex="75" IsHidden="false" Color="" NodeType="2" Name="counter:26"/>
-    <TraceSignal PortIndex="74" IsHidden="false" Color="" NodeType="2" Name="counter:25"/>
-    <TraceSignal PortIndex="73" IsHidden="false" Color="" NodeType="2" Name="counter:24"/>
-    <TraceSignal PortIndex="72" IsHidden="false" Color="" NodeType="2" Name="counter:23"/>
-    <TraceSignal PortIndex="71" IsHidden="false" Color="" NodeType="2" Name="counter:22"/>
-    <TraceSignal PortIndex="70" IsHidden="false" Color="" NodeType="2" Name="counter:21"/>
-    <TraceSignal PortIndex="69" IsHidden="false" Color="" NodeType="2" Name="counter:20"/>
-    <TraceSignal PortIndex="68" IsHidden="false" Color="" NodeType="2" Name="counter:19"/>
-    <TraceSignal PortIndex="67" IsHidden="false" Color="" NodeType="2" Name="counter:18"/>
-    <TraceSignal PortIndex="66" IsHidden="false" Color="" NodeType="2" Name="counter:17"/>
-    <TraceSignal PortIndex="65" IsHidden="false" Color="" NodeType="2" Name="counter:16"/>
-    <TraceSignal PortIndex="64" IsHidden="false" Color="" NodeType="2" Name="counter:15"/>
-    <TraceSignal PortIndex="63" IsHidden="false" Color="" NodeType="2" Name="counter:14"/>
-    <TraceSignal PortIndex="62" IsHidden="false" Color="" NodeType="2" Name="counter:13"/>
-    <TraceSignal PortIndex="61" IsHidden="false" Color="" NodeType="2" Name="counter:12"/>
-    <TraceSignal PortIndex="60" IsHidden="false" Color="" NodeType="2" Name="counter:11"/>
-    <TraceSignal PortIndex="59" IsHidden="false" Color="" NodeType="2" Name="counter:10"/>
-    <TraceSignal PortIndex="58" IsHidden="false" Color="" NodeType="2" Name="counter:9"/>
-    <TraceSignal PortIndex="57" IsHidden="false" Color="" NodeType="2" Name="counter:8"/>
-    <TraceSignal PortIndex="56" IsHidden="false" Color="" NodeType="2" Name="counter:7"/>
-    <TraceSignal PortIndex="55" IsHidden="false" Color="" NodeType="2" Name="counter:6"/>
-    <TraceSignal PortIndex="54" IsHidden="false" Color="" NodeType="2" Name="counter:5"/>
-    <TraceSignal PortIndex="53" IsHidden="false" Color="" NodeType="2" Name="counter:4"/>
-    <TraceSignal PortIndex="52" IsHidden="false" Color="" NodeType="2" Name="counter:3"/>
-    <TraceSignal PortIndex="51" IsHidden="false" Color="" NodeType="2" Name="counter:2"/>
-    <TraceSignal PortIndex="50" IsHidden="false" Color="" NodeType="2" Name="counter:1"/>
-    <TraceSignal PortIndex="49" IsHidden="false" Color="" NodeType="2" Name="counter:0"/>
-    <TraceSignal PortIndex="-1" IsHidden="false" Color="" NodeType="1" Name="SW">
+    <TraceSignal NodeType="2" Color="" Name="counter:27" IsHidden="false" PortIndex="88"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:26" IsHidden="false" PortIndex="87"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:25" IsHidden="false" PortIndex="86"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:24" IsHidden="false" PortIndex="85"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:23" IsHidden="false" PortIndex="84"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:22" IsHidden="false" PortIndex="83"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:21" IsHidden="false" PortIndex="82"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:20" IsHidden="false" PortIndex="81"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:19" IsHidden="false" PortIndex="80"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:18" IsHidden="false" PortIndex="79"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:17" IsHidden="false" PortIndex="78"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:16" IsHidden="false" PortIndex="77"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:15" IsHidden="false" PortIndex="76"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:14" IsHidden="false" PortIndex="75"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:13" IsHidden="false" PortIndex="74"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:12" IsHidden="false" PortIndex="73"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:11" IsHidden="false" PortIndex="72"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:10" IsHidden="false" PortIndex="71"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:9" IsHidden="false" PortIndex="70"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:8" IsHidden="false" PortIndex="69"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:7" IsHidden="false" PortIndex="68"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:6" IsHidden="false" PortIndex="67"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:5" IsHidden="false" PortIndex="66"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:4" IsHidden="false" PortIndex="65"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:3" IsHidden="false" PortIndex="64"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:2" IsHidden="false" PortIndex="63"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:1" IsHidden="false" PortIndex="62"/>
+    <TraceSignal NodeType="2" Color="" Name="counter:0" IsHidden="false" PortIndex="61"/>
+    <TraceSignal NodeType="1" Color="" Name="SW" IsHidden="false" PortIndex="-1">
      <BusRadix Radix="3"/>
      <IsExpanded Expand="false"/>
     </TraceSignal>
-    <TraceSignal PortIndex="84" IsHidden="false" Color="" NodeType="2" Name="dip_sw:3"/>
-    <TraceSignal PortIndex="83" IsHidden="false" Color="" NodeType="2" Name="dip_sw:2"/>
-    <TraceSignal PortIndex="82" IsHidden="false" Color="" NodeType="2" Name="dip_sw:1"/>
-    <TraceSignal PortIndex="81" IsHidden="false" Color="" NodeType="2" Name="dip_sw:0"/>
-    <TraceSignal PortIndex="-1" IsHidden="false" Color="" NodeType="1" Name="PB">
+    <TraceSignal NodeType="2" Color="" Name="dip_sw:3" IsHidden="false" PortIndex="92"/>
+    <TraceSignal NodeType="2" Color="" Name="dip_sw:2" IsHidden="false" PortIndex="91"/>
+    <TraceSignal NodeType="2" Color="" Name="dip_sw:1" IsHidden="false" PortIndex="90"/>
+    <TraceSignal NodeType="2" Color="" Name="dip_sw:0" IsHidden="false" PortIndex="89"/>
+    <TraceSignal NodeType="1" Color="" Name="PB" IsHidden="false" PortIndex="-1">
      <BusRadix Radix="3"/>
      <IsExpanded Expand="false"/>
     </TraceSignal>
-    <TraceSignal PortIndex="87" IsHidden="false" Color="" NodeType="2" Name="pb_sw:2"/>
-    <TraceSignal PortIndex="86" IsHidden="false" Color="" NodeType="2" Name="pb_sw:1"/>
-    <TraceSignal PortIndex="85" IsHidden="false" Color="" NodeType="2" Name="pb_sw:0"/>
-    <TraceSignal PortIndex="88" IsHidden="false" Color="" NodeType="0" Name="REG_RD"/>
-    <TraceSignal PortIndex="89" IsHidden="false" Color="" NodeType="0" Name="REG_WR"/>
-    <TraceSignal PortIndex="48" IsHidden="false" Color="" NodeType="0" Name="usr_we"/>
-    <TraceSignal PortIndex="-1" IsHidden="false" Color="" NodeType="1" Name="usr_addr">
+    <TraceSignal NodeType="2" Color="" Name="pb_sw:2" IsHidden="false" PortIndex="95"/>
+    <TraceSignal NodeType="2" Color="" Name="pb_sw:1" IsHidden="false" PortIndex="94"/>
+    <TraceSignal NodeType="2" Color="" Name="pb_sw:0" IsHidden="false" PortIndex="93"/>
+    <TraceSignal NodeType="0" Color="" Name="REG_RD" IsHidden="false" PortIndex="96"/>
+    <TraceSignal NodeType="0" Color="" Name="REG_WR" IsHidden="false" PortIndex="97"/>
+    <TraceSignal NodeType="1" Color="" Name="REG_ADDR" IsHidden="false" PortIndex="-1">
+     <BusRadix Radix="3"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:7" IsHidden="false" PortIndex="105"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:6" IsHidden="false" PortIndex="104"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:5" IsHidden="false" PortIndex="103"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:4" IsHidden="false" PortIndex="102"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:3" IsHidden="false" PortIndex="101"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:2" IsHidden="false" PortIndex="100"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:1" IsHidden="false" PortIndex="99"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:0" IsHidden="false" PortIndex="98"/>
+    <TraceSignal NodeType="0" Color="" Name="usr_we" IsHidden="false" PortIndex="60"/>
+    <TraceSignal NodeType="1" Color="" Name="usr_addr" IsHidden="false" PortIndex="-1">
      <BusRadix Radix="0"/>
      <IsExpanded Expand="false"/>
     </TraceSignal>
-    <TraceSignal PortIndex="47" IsHidden="false" Color="" NodeType="2" Name="usr_addr:15"/>
-    <TraceSignal PortIndex="46" IsHidden="false" Color="" NodeType="2" Name="usr_addr:14"/>
-    <TraceSignal PortIndex="45" IsHidden="false" Color="" NodeType="2" Name="usr_addr:13"/>
-    <TraceSignal PortIndex="44" IsHidden="false" Color="" NodeType="2" Name="usr_addr:12"/>
-    <TraceSignal PortIndex="43" IsHidden="false" Color="" NodeType="2" Name="usr_addr:11"/>
-    <TraceSignal PortIndex="42" IsHidden="false" Color="" NodeType="2" Name="usr_addr:10"/>
-    <TraceSignal PortIndex="41" IsHidden="false" Color="" NodeType="2" Name="usr_addr:9"/>
-    <TraceSignal PortIndex="40" IsHidden="false" Color="" NodeType="2" Name="usr_addr:8"/>
-    <TraceSignal PortIndex="39" IsHidden="false" Color="" NodeType="2" Name="usr_addr:7"/>
-    <TraceSignal PortIndex="38" IsHidden="false" Color="" NodeType="2" Name="usr_addr:6"/>
-    <TraceSignal PortIndex="37" IsHidden="false" Color="" NodeType="2" Name="usr_addr:5"/>
-    <TraceSignal PortIndex="36" IsHidden="false" Color="" NodeType="2" Name="usr_addr:4"/>
-    <TraceSignal PortIndex="35" IsHidden="false" Color="" NodeType="2" Name="usr_addr:3"/>
-    <TraceSignal PortIndex="34" IsHidden="false" Color="" NodeType="2" Name="usr_addr:2"/>
-    <TraceSignal PortIndex="33" IsHidden="false" Color="" NodeType="2" Name="usr_addr:1"/>
-    <TraceSignal PortIndex="32" IsHidden="false" Color="" NodeType="2" Name="usr_addr:0"/>
-    <TraceSignal PortIndex="-1" IsHidden="false" Color="" NodeType="1" Name="usr_rdata">
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:7" IsHidden="false" PortIndex="59"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:6" IsHidden="false" PortIndex="58"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:5" IsHidden="false" PortIndex="57"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:4" IsHidden="false" PortIndex="56"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:3" IsHidden="false" PortIndex="55"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:2" IsHidden="false" PortIndex="54"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:1" IsHidden="false" PortIndex="53"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_addr:0" IsHidden="false" PortIndex="52"/>
+    <TraceSignal NodeType="1" Color="" Name="usr_rdata" IsHidden="false" PortIndex="-1">
      <BusRadix Radix="0"/>
      <IsExpanded Expand="false"/>
     </TraceSignal>
-    <TraceSignal PortIndex="31" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:15"/>
-    <TraceSignal PortIndex="30" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:14"/>
-    <TraceSignal PortIndex="29" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:13"/>
-    <TraceSignal PortIndex="28" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:12"/>
-    <TraceSignal PortIndex="27" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:11"/>
-    <TraceSignal PortIndex="26" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:10"/>
-    <TraceSignal PortIndex="25" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:9"/>
-    <TraceSignal PortIndex="24" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:8"/>
-    <TraceSignal PortIndex="23" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:7"/>
-    <TraceSignal PortIndex="22" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:6"/>
-    <TraceSignal PortIndex="21" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:5"/>
-    <TraceSignal PortIndex="20" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:4"/>
-    <TraceSignal PortIndex="19" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:3"/>
-    <TraceSignal PortIndex="18" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:2"/>
-    <TraceSignal PortIndex="17" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:1"/>
-    <TraceSignal PortIndex="16" IsHidden="false" Color="" NodeType="2" Name="usr_rdata:0"/>
-    <TraceSignal PortIndex="-1" IsHidden="false" Color="" NodeType="1" Name="usr_wdata">
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:15" IsHidden="false" PortIndex="51"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:14" IsHidden="false" PortIndex="50"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:13" IsHidden="false" PortIndex="49"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:12" IsHidden="false" PortIndex="48"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:11" IsHidden="false" PortIndex="47"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:10" IsHidden="false" PortIndex="46"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:9" IsHidden="false" PortIndex="45"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:8" IsHidden="false" PortIndex="44"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:7" IsHidden="false" PortIndex="43"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:6" IsHidden="false" PortIndex="42"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:5" IsHidden="false" PortIndex="41"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:4" IsHidden="false" PortIndex="40"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:3" IsHidden="false" PortIndex="39"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:2" IsHidden="false" PortIndex="38"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:1" IsHidden="false" PortIndex="37"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_rdata:0" IsHidden="false" PortIndex="36"/>
+    <TraceSignal NodeType="1" Color="" Name="usr_wdata" IsHidden="false" PortIndex="-1">
      <BusRadix Radix="0"/>
      <IsExpanded Expand="false"/>
     </TraceSignal>
-    <TraceSignal PortIndex="15" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:15"/>
-    <TraceSignal PortIndex="14" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:14"/>
-    <TraceSignal PortIndex="13" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:13"/>
-    <TraceSignal PortIndex="12" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:12"/>
-    <TraceSignal PortIndex="11" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:11"/>
-    <TraceSignal PortIndex="10" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:10"/>
-    <TraceSignal PortIndex="9" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:9"/>
-    <TraceSignal PortIndex="8" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:8"/>
-    <TraceSignal PortIndex="7" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:7"/>
-    <TraceSignal PortIndex="6" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:6"/>
-    <TraceSignal PortIndex="5" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:5"/>
-    <TraceSignal PortIndex="4" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:4"/>
-    <TraceSignal PortIndex="3" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:3"/>
-    <TraceSignal PortIndex="2" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:2"/>
-    <TraceSignal PortIndex="1" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:1"/>
-    <TraceSignal PortIndex="0" IsHidden="false" Color="" NodeType="2" Name="usr_wdata:0"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:15" IsHidden="false" PortIndex="35"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:14" IsHidden="false" PortIndex="34"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:13" IsHidden="false" PortIndex="33"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:12" IsHidden="false" PortIndex="32"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:11" IsHidden="false" PortIndex="31"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:10" IsHidden="false" PortIndex="30"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:9" IsHidden="false" PortIndex="29"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:8" IsHidden="false" PortIndex="28"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:7" IsHidden="false" PortIndex="27"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:6" IsHidden="false" PortIndex="26"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:5" IsHidden="false" PortIndex="25"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:4" IsHidden="false" PortIndex="24"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:3" IsHidden="false" PortIndex="23"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:2" IsHidden="false" PortIndex="22"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:1" IsHidden="false" PortIndex="21"/>
+    <TraceSignal NodeType="2" Color="" Name="usr_wdata:0" IsHidden="false" PortIndex="20"/>
+    <TraceSignal NodeType="1" Color="" Name="reg_state" IsHidden="false" PortIndex="-1">
+     <BusRadix Radix="0"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal NodeType="2" Color="" Name="reg_state:3" IsHidden="false" PortIndex="19"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_state:2" IsHidden="false" PortIndex="18"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_state:1" IsHidden="false" PortIndex="17"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_state:0" IsHidden="false" PortIndex="16"/>
+    <TraceSignal NodeType="1" Color="" Name="reg_rx_data" IsHidden="false" PortIndex="-1">
+     <BusRadix Radix="0"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:15" IsHidden="false" PortIndex="15"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:14" IsHidden="false" PortIndex="14"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:13" IsHidden="false" PortIndex="13"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:12" IsHidden="false" PortIndex="12"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:11" IsHidden="false" PortIndex="11"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:10" IsHidden="false" PortIndex="10"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:9" IsHidden="false" PortIndex="9"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:8" IsHidden="false" PortIndex="8"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:7" IsHidden="false" PortIndex="7"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:6" IsHidden="false" PortIndex="6"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:5" IsHidden="false" PortIndex="5"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:4" IsHidden="false" PortIndex="4"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:3" IsHidden="false" PortIndex="3"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:2" IsHidden="false" PortIndex="2"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:1" IsHidden="false" PortIndex="1"/>
+    <TraceSignal NodeType="2" Color="" Name="reg_rx_data:0" IsHidden="false" PortIndex="0"/>
    </TraceSigTreeData>
-   <TriggerUI PreSelect="1" PreSelectType="0" UserSelect="0" UserSelectPos="0"/>
+   <TriggerUI PreSelectType="0" PreSelect="1" UserSelect="0" UserSelectPos="0"/>
    <CoreRun Run="true"/>
    <CoreWndUIData>
-    <ClockFrequency Frequency="-1.0" Unit="ns"/>
+    <ClockFrequency Unit="ns" Frequency="-1.0"/>
    </CoreWndUIData>
   </WinUI>
   <WinUI CoreIndex="1" CoreType="Controller">
